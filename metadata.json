@@ -1,0 +1,6 @@
+{
+  "name": "Portfolio Homepage",
+  "description": "A premium, minimalist portfolio homepage inspired by Adham Dannaway's website, featuring a split designer/coder portrait and live Pakistan time.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
