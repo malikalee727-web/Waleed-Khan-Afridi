@@ -167,10 +167,14 @@ export default function App() {
       align-items: center;
     }
 
+    .ap-header-name {
+      display: block;
+    }
+
     .ap-logo {
-      width: 44px;
+      padding: 0 16px;
       height: 44px;
-      border-radius: 50%;
+      border-radius: 22px;
       background: #ffffff;
       color: #000000;
       display: flex;
@@ -178,11 +182,14 @@ export default function App() {
       justify-content: center;
       font-weight: 800;
       font-family: var(--pkt-font-poppins);
-      font-size: 1.1rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
       text-decoration: none;
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
       border: 2px solid rgba(255, 255, 255, 0.2);
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
     }
 
     .ap-logo:hover {
@@ -1014,13 +1021,18 @@ export default function App() {
         grid-template-columns: 1fr;
         gap: 15px;
       }
+
+      .ap-header-name {
+        display: none !important;
+      }
     }
   </style>
 
   <!-- Navigation header -->
   <header class="ap-nav">
-    <div class="ap-nav-left">
-      <a href="#home" class="ap-logo">AP</a>
+    <div class="ap-nav-left" style="display: flex; align-items: center; gap: 12px;">
+      <a href="#home" class="ap-logo">Aleex STUDIO</a>
+      <span style="color: #ffffff; font-weight: 700; font-size: 0.95rem; font-family: var(--pkt-font-poppins); white-space: nowrap;" class="ap-header-name">Waleed Khan</span>
     </div>
     
     <nav class="ap-nav-center">
@@ -1053,28 +1065,25 @@ export default function App() {
       
       <div class="ap-fade-in" style="position: relative; z-index: 2;">
         <h1 class="ap-hero-title-designer">designer</h1>
-        <p class="ap-hero-subtext">“UI/UX product designer specialising in UI design and design systems.”</p>
+        <p class="ap-hero-subtext">“WordPress & WooCommerce designer specializing in custom templates & mobile-perfect layouts.”</p>
       </div>
     </div>
 
     <!-- Central Face Canvas Block -->
     <div class="ap-portrait-container">
       <div class="ap-portrait-frame" id="interactive-portrait-frame">
-        <img class="ap-portrait-img" src="https://pin.it/1aGtOfWwr" alt="AP Portfolio" />
+        <img class="ap-portrait-img" src="https://i.pinimg.com/736x/4f/aa/87/4faa871b0960ce4fdf2a1228318a6625.jpg" alt="Waleed Khan Portfolio" style="object-position: 50% 28%;" />
       </div>
 
       <!-- Social Floating Anchor links -->
       <div class="ap-social-anchorage">
-        <a href="https://twitter.com" target="_blank" rel="noopener" class="ap-social-icon" title="Twitter/X">
-          <i class="fa-brands fa-x-twitter"></i>
+        <a href="https://www.fiverr.com/sellers/aleekhan77" target="_blank" rel="noopener" class="ap-social-icon" title="Fiverr Profile">
+          <i class="fa-brands fa-fiverr"></i>
         </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener" class="ap-social-icon" title="LinkedIn">
-          <i class="fa-brands fa-linkedin-in"></i>
+        <a href="https://wa.me/923141137917" target="_blank" rel="noopener" class="ap-social-icon" title="Message on WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
         </a>
-        <a href="https://facebook.com" target="_blank" rel="noopener" class="ap-social-icon" title="Facebook">
-          <i class="fa-brands fa-facebook-f"></i>
-        </a>
-        <a href="https://instagram.com" target="_blank" rel="noopener" class="ap-social-icon" title="Instagram">
+        <a href="https://www.instagram.com/malikdeenkhail/" target="_blank" rel="noopener" class="ap-social-icon" title="Instagram">
           <i class="fa-brands fa-instagram"></i>
         </a>
       </div>
@@ -1086,9 +1095,9 @@ export default function App() {
         <div style="font-size: 0.65rem; font-family: monospace; white-space: pre-wrap; text-align: left; opacity: 0.7;">
           import &#123; createTheme &#125; from '@styles/theme';
           const portfolio = &#123;
-            owner: "AP",
-            skills: ["UX Design", "React", "TypeScript", "SCSS"],
-            buildSuite: () => &#123; return "Clean Code" &#125;
+            owner: "Waleed Khan",
+            skills: ["WordPress", "eCommerce", "PHP", "SEO"],
+            buildSuite: () => &#123; return "Clean WordPress Integration" &#125;
           &#125;;
         </div>
       </div>
@@ -1301,15 +1310,15 @@ export default function App() {
       </div>
 
       <div class="ap-contact-wrapper">
-        <form id="ap-custom-contact-form" onsubmit="event.preventDefault(); alert('Message dispatched! Thank you for choosing to connect with AP.');">
+        <form id="ap-custom-contact-form" onsubmit="event.preventDefault(); alert('Message dispatched! Thank you for choosing to connect with Waleed Khan.');">
           <div class="ap-form-group">
             <label for="ap-name">Your Full Name</label>
-            <input type="text" id="ap-name" class="ap-textbox" required placeholder="Adham Dannaway" />
+            <input type="text" id="ap-name" class="ap-textbox" required placeholder="Waleed Khan" />
           </div>
           
           <div class="ap-form-group">
             <label for="ap-email">Your Email Address</label>
-            <input type="email" id="ap-email" class="ap-textbox" required placeholder="contact@adhamdannaway.com" />
+            <input type="email" id="ap-email" class="ap-textbox" required placeholder="yourname@example.com" />
           </div>
 
           <div class="ap-form-group">
@@ -1467,10 +1476,13 @@ export default function App() {
       
       {/* 1. FIXED GLASSMORPHIC TOP NAVBAR */}
       <nav id="nav-header" className="fixed top-0 left-0 w-full h-[75px] bg-zinc-950/85 backdrop-blur-md border-b border-white/8 flex items-center justify-between px-6 lg:px-12 z-50">
-        <div className="flex items-center">
-          <a href="#home" className="w-[44px] height-[44px] rounded-full bg-white text-black flex items-center justify-center font-black font-poppins text-lg hover:scale-110 active:scale-95 transition-all shadow-[0_0_15px_rgba(255,255,255,0.15)] select-none">
-            AP
+        <div className="flex items-center gap-3">
+          <a href="#home" className="px-4.5 h-[44px] rounded-full bg-white text-black flex items-center justify-center font-black font-poppins text-xs tracking-wider hover:scale-105 active:scale-95 transition-all shadow-[0_0_15px_rgba(255,255,255,0.15)] select-none uppercase">
+            Aleex STUDIO
           </a>
+          <span className="hidden sm:inline-block text-white font-poppins text-sm font-extrabold tracking-tight select-none">
+            Waleed Khan
+          </span>
         </div>
 
         <div className="hidden lg:flex items-center gap-8">
@@ -1537,14 +1549,14 @@ export default function App() {
               designer
             </h1>
             <p className="font-sans text-lg sm:text-xl font-light text-zinc-500 max-w-[440px] leading-relaxed select-none">
-              “UI/UX product designer specialising in UI design and design systems.”
+              “WordPress & WooCommerce designer specializing in custom templates & mobile-perfect layouts.”
             </p>
           </div>
         </div>
 
         {/* CENTER SPLIT FACE PORTRAIT & SOCIAL ANCHORAGE */}
         <div 
-          className="absolute top-[42%] lg:top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none"
+          className="absolute top-[42%] lg:top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none ap-portrait-entry-anim"
           style={{
             perspective: '1000px'
           }}
@@ -1562,20 +1574,20 @@ export default function App() {
               }`}
             >
               <img 
-                src="https://pin.it/1aGtOfWwr" 
-                alt="AP Portfolio" 
+                src="https://i.pinimg.com/736x/4f/aa/87/4faa871b0960ce4fdf2a1228318a6625.jpg" 
+                alt="Waleed Khan Portfolio" 
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover rounded-full select-none"
+                style={{ objectPosition: '50% 28%' }}
               />
             </div>
 
             {/* Social icons nested positioned absolutely above/right of visual portrait */}
-            <div className="absolute -top-3 -right-3 flex flex-col gap-3 pointer-events-auto">
+            <div className="absolute top-[-40px] right-[-25px] flex flex-col gap-3 pointer-events-auto">
               {[
-                { icon: 'fa-x-twitter', url: 'https://twitter.com', title: 'Twitter/X' },
-                { icon: 'fa-linkedin-in', url: 'https://linkedin.com', title: 'LinkedIn' },
-                { icon: 'fa-facebook-f', url: 'https://facebook.com', title: 'Facebook' },
-                { icon: 'fa-instagram', url: 'https://instagram.com', title: 'Instagram' }
+                { breed: 'fa-brands', icon: 'fa-fiverr', url: 'https://www.fiverr.com/sellers/aleekhan77', title: 'Fiverr Profile' },
+                { breed: 'fa-brands', icon: 'fa-whatsapp', url: 'https://wa.me/923141137917', title: 'Message on WhatsApp' },
+                { breed: 'fa-brands', icon: 'fa-instagram', url: 'https://www.instagram.com/malikdeenkhail/', title: 'Instagram' }
               ].map((item, idx) => (
                 <a 
                   key={idx}
@@ -1585,7 +1597,7 @@ export default function App() {
                   title={item.title}
                   className="w-[44px] h-[44px] rounded-full bg-white border border-zinc-100 text-zinc-900 hover:text-white hover:bg-zinc-900 flex items-center justify-center shadow-md text-sm hover:scale-115 hover:-translate-y-1 transition-all"
                 >
-                  <i className={`fa-brands ${item.icon}`} />
+                  <i className={`${item.breed} ${item.icon}`} />
                 </a>
               ))}
             </div>
@@ -1634,7 +1646,7 @@ export default function App() {
               &lt;coder&gt;
             </h1>
             <p className="font-mono text-base sm:text-lg font-light text-zinc-500 max-w-[440px] leading-relaxed select-none">
-              “Front end developer who writes clean, elegant and efficient code.”
+              “WordPress expert building speed-optimized online stores & custom plugin solutions.”
             </p>
           </div>
         </div>
@@ -1652,12 +1664,12 @@ export default function App() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="bg-white p-8 rounded-2xl border border-zinc-100 border-l-4 border-l-orange-500 shadow-sm hover:shadow-md transition-shadow duration-300 space-y-5">
-              <h3 className="font-poppins text-xl font-bold text-orange-600">Dynamic Artist</h3>
+              <h3 className="font-poppins text-xl font-bold text-orange-600">Web Designer</h3>
               <p className="text-zinc-600 font-sans leading-relaxed text-[15px]">
-                I believe in structural honesty and functional minimalism. I spend hours balancing white spaces, fine-tuning typography scale systems, and selecting neutral, majestic color swatches in Figma to establish clarity and beauty.
+                Eight years building high-converting WordPress & WooCommerce layouts. I specialize in elegant custom design, mobile-perfect rendering, and fast loading layouts that turn visitors into active clients.
               </p>
               <div className="flex flex-wrap gap-2">
-                {['UI Design', 'Figma', 'Typography', 'Visual Identity', 'Mockups'].map((tag) => (
+                {['Web Designer', 'UI/UX Design', 'Figma', 'WooCommerce Styling', 'Elementor Work', 'Typography'].map((tag) => (
                   <span key={tag} className="text-[11px] font-medium px-2.5 py-1 bg-zinc-50 border border-zinc-100 text-zinc-650 rounded-md">
                     {tag}
                   </span>
@@ -1666,12 +1678,12 @@ export default function App() {
             </div>
 
             <div className="bg-white p-8 rounded-2xl border border-zinc-100 border-l-4 border-l-sky-500 shadow-sm hover:shadow-md transition-shadow duration-300 space-y-5">
-              <h3 className="font-poppins text-xl font-bold text-sky-600">Technical Architect</h3>
+              <h3 className="font-poppins text-xl font-bold text-sky-600">Web Developer</h3>
               <p className="text-zinc-650 font-mono leading-relaxed text-[14px]">
-                I code modular architectures in React and TypeScript. My packages carry near-zero bundle footprints, prioritize flawless responsiveness, and achieve perfect scores in core web performance vital diagnostics.
+                Hundreds of projects delivered with 5★ reviews on Fiverr. I write clean custom plugins, bespoke child themes, custom integrations, speed boosts (Core Web Vitals), and secure migrations.
               </p>
               <div className="flex flex-wrap gap-2">
-                {['React / Node', 'TypeScript', 'Responsive CSS', 'Websocket APIs', 'GitHub Actions'].map((tag) => (
+                {['Web Developer', 'WordPress Customization', 'WooCommerce Stores', 'Custom Plugins', 'Core Web Vitals', 'On-page SEO'].map((tag) => (
                   <span key={tag} className="text-[11px] font-mono px-2.5 py-1 bg-zinc-50 border border-zinc-100 text-zinc-600 rounded-md">
                     {tag}
                   </span>
@@ -1696,20 +1708,20 @@ export default function App() {
             <div className="group bg-white border border-zinc-150 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-350 hover:-translate-y-1">
               <div className="h-[230px] bg-zinc-50 flex flex-col items-center justify-center p-6 border-b border-zinc-100 relative">
                 <Compass className="w-16 h-16 text-orange-600 mb-3 animate-spin-slow-subtlest" />
-                <span className="text-[13px] font-semibold text-zinc-400">Integrated UI Suite Blueprint</span>
+                <span className="text-[13px] font-semibold text-zinc-400">Custom Styled Storefront Design</span>
                 <span className="absolute top-4 right-4 text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 bg-zinc-950 text-white rounded">
-                  Design
+                  WooCommerce
                 </span>
               </div>
               <div className="p-6 space-y-4">
-                <h3 className="font-poppins text-lg font-bold text-zinc-950">Summit Design Base</h3>
+                <h3 className="font-poppins text-lg font-bold text-zinc-950">Luxury Brands WooCommerce Setup</h3>
                 <p className="text-zinc-550 text-sm leading-relaxed">
-                  An elegant global component library designed from the ground up prioritizing typographic grids, customizable variables, and smooth cross-screen rendering.
+                  A high-performance online store complete with elegant product sliders, simplified checkout flows, automatic sales tax, and shipping calculations.
                 </p>
                 <div className="flex justify-between items-center pt-2">
-                  <span className="text-xs font-mono text-zinc-450">#Figma #UX_Architecture</span>
+                  <span className="text-xs font-mono text-zinc-450">#WordPress #WooCommerce #Sales_UX</span>
                   <a href="#portfolio" className="text-xs font-semibold flex items-center gap-1 group-hover:text-orange-500 transition-colors">
-                    Review case study <ArrowUpRight className="w-3.5 h-3.5" />
+                    Review specs <ArrowUpRight className="w-3.5 h-3.5" />
                   </a>
                 </div>
               </div>
@@ -1718,20 +1730,20 @@ export default function App() {
             <div className="group bg-white border border-zinc-150 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-350 hover:-translate-y-1">
               <div className="h-[230px] bg-zinc-50 flex flex-col items-center justify-center p-6 border-b border-zinc-100 relative">
                 <Cpu className="w-16 h-16 text-sky-600 mb-3 animate-pulse" />
-                <span className="text-[13px] font-semibold text-zinc-400">Core Runtime Scheduler</span>
+                <span className="text-[13px] font-semibold text-zinc-400">Bespoke Functions & Integrations</span>
                 <span className="absolute top-4 right-4 text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 bg-zinc-950 text-white rounded">
                   Development
                 </span>
               </div>
               <div className="p-6 space-y-4">
-                <h3 className="font-poppins text-lg font-bold text-zinc-950">Vortex State Engine</h3>
+                <h3 className="font-poppins text-lg font-bold text-zinc-950">Custom Filter Engine WordPress Plugin</h3>
                 <p className="text-zinc-550 text-sm leading-relaxed">
-                  A multi-core parallel event processing queue developed strictly in modern TypeScript utilizing asynchronous memory mapping patterns.
+                  A custom WordPress plugin delivering complex AJAX search parameters and category filtering with sub-millisecond query caching.
                 </p>
                 <div className="flex justify-between items-center pt-2">
-                  <span className="text-xs font-mono text-zinc-450">#ESNext #NodeJS</span>
+                  <span className="text-xs font-mono text-zinc-450">#PHP #CustomPlugins #MySQL</span>
                   <a href="#portfolio" className="text-xs font-semibold flex items-center gap-1 group-hover:text-sky-500 transition-colors">
-                    Explore codebase <ArrowUpRight className="w-3.5 h-3.5" />
+                    Explore specs <ArrowUpRight className="w-3.5 h-3.5" />
                   </a>
                 </div>
               </div>
@@ -1754,17 +1766,17 @@ export default function App() {
             <div className="bg-white border border-zinc-150 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
               <div className="h-[180px] bg-zinc-50 flex flex-col items-center justify-center border-b border-zinc-100">
                 <Smartphone className="w-12 h-12 text-zinc-450 mb-2" />
-                <span className="text-xs font-semibold text-zinc-400">iOS Companion Portal</span>
+                <span className="text-xs font-semibold text-zinc-400">Core Web Vitals Optimization</span>
               </div>
               <div className="p-6 space-y-3">
-                <h3 className="font-poppins text-md font-bold text-zinc-950">Zenith Focus App</h3>
-                <p className="text-zinc-600 text-xs sm:text-sm leading-relaxed">
-                  Designed visually on circular components and coded cleanly in light-footprint frameworks, promoting active meditation loops.
+                <h3 className="font-poppins text-md font-bold text-zinc-950">Aurora PageSpeed Accelerant</h3>
+                <p className="text-zinc-650 text-xs sm:text-sm leading-relaxed">
+                  Optimized server performance, modern script deferrals, and image minification systems to elevate performance scores to 95+ on Google PageSpeed.
                 </p>
                 <div className="flex justify-between items-center pt-2">
-                  <span className="text-[11px] font-mono text-sky-500">#Native #Design</span>
+                  <span className="text-[11px] font-mono text-sky-500">#PageSpeed #CoreWebVitals</span>
                   <span className="text-xs font-semibold hover:text-orange-500 cursor-pointer flex items-center gap-1">
-                    Study Case <ArrowUpRight className="w-3.5 h-3.5" />
+                    Study metrics <ArrowUpRight className="w-3.5 h-3.5" />
                   </span>
                 </div>
               </div>
@@ -1773,17 +1785,17 @@ export default function App() {
             <div className="bg-white border border-zinc-150 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
               <div className="h-[180px] bg-zinc-50 flex flex-col items-center justify-center border-b border-zinc-100">
                 <Layers className="w-12 h-12 text-zinc-450 mb-2" />
-                <span className="text-xs font-semibold text-zinc-400">Multiplayer Collaboration Web Tool</span>
+                <span className="text-xs font-semibold text-zinc-400">Theme & Host Migration Systems</span>
               </div>
               <div className="p-6 space-y-3">
-                <h3 className="font-poppins text-md font-bold text-zinc-950">PixelSync Sketcher</h3>
-                <p className="text-zinc-600 text-xs sm:text-sm leading-relaxed">
-                  Real-time visual whiteboard utilizing lightweight synchronization protocols for design sprints.
+                <h3 className="font-poppins text-md font-bold text-zinc-950">Zero-Downtime Host Transfer</h3>
+                <p className="text-zinc-650 text-xs sm:text-sm leading-relaxed">
+                  Seamlessly migrated heavy databases, media archives, and configuration environments to new high-performance hosts with active firewall setup.
                 </p>
                 <div className="flex justify-between items-center pt-2">
-                  <span className="text-[11px] font-mono text-orange-500">#WebSockets #HTML5</span>
+                  <span className="text-[11px] font-mono text-orange-500">#Migration #CareMaintenance</span>
                   <span className="text-xs font-semibold hover:text-sky-500 cursor-pointer flex items-center gap-1">
-                    Launch Tool <ArrowUpRight className="w-3.5 h-3.5" />
+                    Check details <ArrowUpRight className="w-3.5 h-3.5" />
                   </span>
                 </div>
               </div>
@@ -1836,23 +1848,23 @@ export default function App() {
           <form 
             onSubmit={(e) => {
               e.preventDefault();
-              alert('Message dispatched! Thank you for choosing to connect with AP.');
+              alert('Message dispatched! Thank you for choosing to connect with Waleed Khan.');
             }}
             className="space-y-5"
           >
             <div className="space-y-1.5">
               <label htmlFor="name-input" className="text-[11px] font-bold uppercase tracking-wider text-zinc-700">Full Name</label>
-              <input id="name-input" type="text" required placeholder="Adham Dannaway" className="w-full p-3 border border-zinc-350 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-zinc-950 text-sm font-sans" />
+              <input id="name-input" type="text" required placeholder="Waleed Khan" className="w-full p-3 border border-zinc-350 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-zinc-950 text-sm font-sans" />
             </div>
 
             <div className="space-y-1.5">
               <label htmlFor="email-input" className="text-[11px] font-bold uppercase tracking-wider text-zinc-700">Email Address</label>
-              <input id="email-input" type="email" required placeholder="contact@adhamdannaway.com" className="w-full p-3 border border-zinc-350 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-zinc-950 text-sm font-sans" />
+              <input id="email-input" type="email" required placeholder="yourname@example.com" className="w-full p-3 border border-zinc-350 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-zinc-950 text-sm font-sans" />
             </div>
 
             <div className="space-y-1.5">
               <label htmlFor="msg-input" className="text-[11px] font-bold uppercase tracking-wider text-zinc-700">Message / Idea Description</label>
-              <textarea id="msg-input" rows={4} required placeholder="Let's build a spectacular portfolio homepage split between code and visual layouts..." className="w-full p-3 border border-zinc-350 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-zinc-950 text-sm font-sans resize-y" />
+              <textarea id="msg-input" rows={4} required placeholder="Let's build a custom WordPress eCommerce store or high-converting landing page..." className="w-full p-3 border border-zinc-350 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-zinc-950 text-sm font-sans resize-y" />
             </div>
 
             <button type="submit" className="w-full py-3.5 bg-zinc-950 text-white font-bold rounded-lg text-sm hover:bg-black transition-all flex items-center justify-center gap-2 shadow-md hover:scale-[1.01]">
@@ -1864,62 +1876,13 @@ export default function App() {
 
       {/* 8. CENTERED FOOTER */}
       <footer className="bg-zinc-950 text-white py-12 px-6 text-center space-y-4 select-none">
-        <p className="text-xs text-zinc-500 font-medium">© 2026 AP. All rights reserved.</p>
+        <p className="text-xs text-zinc-500 font-medium">© 2026 Waleed Khan. All rights reserved.</p>
         <div className="flex justify-center items-center gap-4 text-xs font-semibold text-zinc-400">
           <a href="#" className="hover:text-white transition-colors">Privacy policy</a>
-          <span className="text-zinc-800">|</span>
-          <a href="#" className="hover:text-white transition-colors">Privacy policy</a>
+          <span className="text-zinc-805">|</span>
+          <a href="#" className="hover:text-white transition-colors">Terms of service</a>
         </div>
       </footer>
-
-      {/* 9. WORDPRESS SINGLE-FILE HTML CODE EXPORTER DRAWER */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <button 
-          onClick={() => setShowExporter(!showExporter)}
-          className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-3 rounded-full flex items-center gap-2 shadow-lg font-bold text-xs select-none transition-all active:scale-95"
-        >
-          <Code className="w-4 h-4" />
-          {showExporter ? 'Hide Export Menu' : 'Copy WordPress HTML Code'}
-        </button>
-
-        {showExporter && (
-          <div className="absolute bottom-16 right-0 w-[310px] sm:w-[480px] bg-zinc-950 text-zinc-200 border border-white/10 rounded-2xl shadow-2xl p-5 space-y-4 animate-fade-in pointer-events-auto select-text font-sans">
-            <div className="flex items-center justify-between">
-              <div>
-                <h4 className="font-poppins text-xs font-extrabold text-white uppercase tracking-widest">WordPress custom block</h4>
-                <p className="text-[10px] text-zinc-400">Pure, zero-dependency, single-file template containing internal styles and JavaScript.</p>
-              </div>
-              <button 
-                onClick={() => setShowExporter(false)}
-                className="text-zinc-500 hover:text-white text-md select-none font-bold p-1"
-                title="Dismiss"
-              >
-                &times;
-              </button>
-            </div>
-
-            <div className="relative">
-              <pre className="text-[9px] font-mono p-3 bg-zinc-900 border border-white/5 rounded-lg max-h-[160px] overflow-y-auto overflow-x-hidden text-sky-300">
-                {wordpressHTMLBlock}
-              </pre>
-              <div className="absolute top-2 right-2 flex gap-1">
-                <button 
-                  onClick={copyToClipboard}
-                  className="bg-black/60 hover:bg-black/80 backdrop-blur-sm text-white border border-white/15 px-2.5 py-1.5 rounded text-[10px] font-bold flex items-center gap-1.5 transition-colors"
-                >
-                  {copied ? <Check className="w-3.5 h-3.5 text-green-400" /> : <Clipboard className="w-3.5 h-3.5" />}
-                  {copied ? 'Copied' : 'Copy block'}
-                </button>
-              </div>
-            </div>
-
-            <div className="text-[9.5px] text-zinc-400 leading-relaxed bg-white/5 p-3 rounded-lg flex items-start gap-2 select-none">
-              <span className="text-orange-400 font-bold">Quick Guide:</span>
-              <span>Create a Custom HTML block in Gutenberg / Elementor editor and paste this code. Your site will instantly render this stunning portfolio perfectly with absolute zero setup.</span>
-            </div>
-          </div>
-        )}
-      </div>
 
     </div>
   );
