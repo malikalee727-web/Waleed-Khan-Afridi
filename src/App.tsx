@@ -1072,7 +1072,7 @@ export default function App() {
     <!-- Central Face Canvas Block -->
     <div class="ap-portrait-container">
       <div class="ap-portrait-frame" id="interactive-portrait-frame">
-        <img class="ap-portrait-img" src="https://i.pinimg.com/736x/4f/aa/87/4faa871b0960ce4fdf2a1228318a6625.jpg" alt="Waleed Khan Portfolio" style="object-position: 50% 28%;" />
+        <video class="ap-portrait-img" src="https://v1.pinimg.com/videos/iht/expMp4/c7/26/5a/c7265ae30899ed25703ee737bc80dd45_720w.mp4" autoplay loop muted playsinline style="object-position: 50% 28%; width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></video>
       </div>
 
       <!-- Social Floating Anchor links -->
@@ -1515,140 +1515,141 @@ export default function App() {
         ref={heroRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="relative w-full min-h-screen flex flex-col lg:flex-row pt-[75px] overflow-hidden bg-white select-none"
+        className="relative w-full min-h-[calc(100vh-75px)] flex flex-col justify-center items-center pt-[75px] pb-12 overflow-hidden bg-white select-none"
       >
-        {/* Subtle decorative split line */}
-        <div className="hidden lg:block absolute top-0 bottom-0 left-1/2 w-[1px] bg-gradient-to-b from-zinc-200/50 via-zinc-100 to-transparent -translate-x-1/2 z-20 pointer-events-none" />
-
-        {/* LEFT SIDE: DESIGNER */}
-        <div 
-          className={`w-full lg:w-1/2 min-h-[40vh] lg:min-h-0 flex flex-col justify-center items-center lg:items-start text-center lg:text-left px-8 lg:px-[10%] py-12 relative z-10 transition-colors duration-500 ${
-            mousePos.x < 0.45 ? 'bg-amber-50/20' : 'bg-neutral-50/80'
-          }`}
-        >
-          {/* Artistic glowing blobs */}
-          <div 
-            className="absolute inset-0 pointer-events-none overflow-hidden transition-all duration-300"
-            style={{
-              opacity: dWeight,
-              transform: `translate(${leftShapeX}px, ${leftShapeY}px)`
-            }}
-          >
-            <div className="absolute top-[20%] left-[10%] w-[260px] h-[260px] rounded-full bg-orange-200/20 blur-[40px]" />
-            <div className="absolute bottom-[20%] left-[20%] w-[220px] h-[220px] rounded-full bg-rose-200/25 blur-[45px]" />
-          </div>
-
-          <div className="relative z-10 space-y-4 animate-fade-in">
-            <h1 
-              style={{
-                color: mousePos.x < 0.45 ? '#ea580c' : '#18181b',
-                transform: mousePos.x < 0.45 ? 'translateX(10px) scale(1.01)' : 'none'
-              }}
-              className="font-poppins text-7xl sm:text-8xl lg:text-[7.5rem] font-extrabold leading-[0.9] tracking-tighter lowercase select-none transition-all duration-300"
-            >
-              designer
-            </h1>
-            <p className="font-sans text-lg sm:text-xl font-light text-zinc-500 max-w-[440px] leading-relaxed select-none">
-              “WordPress & WooCommerce designer specializing in custom templates & mobile-perfect layouts.”
-            </p>
-          </div>
+        {/* Subtle background texturing following the reference screenshot */}
+        <div className="absolute inset-0 pointer-events-none opacity-40">
+          <div className="absolute top-1/2 left-0 w-1/2 h-[350px] -translate-y-1/2 bg-gradient-to-r from-orange-50/10 to-transparent blur-[80px]" />
+          <div className="absolute top-1/2 right-0 w-1/2 h-[350px] -translate-y-1/2 bg-gradient-to-l from-sky-50/10 to-transparent blur-[80px]" />
         </div>
 
-        {/* CENTER SPLIT FACE PORTRAIT & SOCIAL ANCHORAGE */}
-        <div 
-          className="absolute top-[42%] lg:top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none ap-portrait-entry-anim"
-          style={{
-            perspective: '1000px'
-          }}
-        >
-          <div 
-            className="w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] lg:w-[400px] lg:h-[400px] relative transition-transform duration-100 ease-out"
-            style={{
-              transform: isMobile ? 'none' : `rotateY(${portraitRotateY}deg) rotateX(${portraitRotateX}deg) translate3d(${portraitTranslateX}px, ${portraitTranslateY}px, 20px)`
-            }}
-          >
-            {/* The Outer Rotating Frame */}
-            <div 
-              className={`w-full h-full rounded-full bg-white p-2.5 shadow-[0_12px_45px_rgba(0,0,0,0.06),_0_1px_3px_rgba(0,0,0,0.01),_inset_0_0_0_1px_rgba(0,0,0,0.04)] hover:scale-105 active:scale-100 animate-bounce-subtle pointer-events-auto transition-all ${
-                mousePos.x < 0.45 ? 'shadow-orange-500/10' : mousePos.x > 0.55 ? 'shadow-sky-500/10' : ''
-              }`}
+        {/* Unified, Symmetrical Desktop/Tablet Container (Centering everything exactly like the screenshot) */}
+        <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between min-h-[520px] lg:h-[620px] gap-12 md:gap-0 mt-6 lg:mt-0">
+          
+          {/* Logo element representation exactly positioned above-left of the portrait (corresponds to the 'AP' symbol in screenshot) */}
+          <div className="md:absolute top-[-10px] left-6 lg:left-14 z-40 select-none pb-4 md:pb-0">
+            <div className="w-[52px] h-[52px] rounded-full bg-zinc-950 text-white font-extrabold flex items-center justify-center font-poppins text-sm border-2 border-white/20 shadow-[0_5px_15px_rgba(0,0,0,0.15)] bg-gradient-to-b from-zinc-900 to-black">
+              WK
+            </div>
+          </div>
+
+          {/* Social representation exactly positioned above-right of the portrait (corresponds to horizontal social anchors in screenshot) */}
+          <div className="md:absolute top-0 right-6 lg:right-14 z-40 flex items-center gap-7 select-none pb-6 md:pb-0 pointer-events-auto">
+            <a 
+              href="https://www.fiverr.com/sellers/aleekhan77" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-zinc-650 hover:text-orange-600 transition-colors duration-200"
+              title="Fiverr Profile"
             >
-              <img 
-                src="https://i.pinimg.com/736x/4f/aa/87/4faa871b0960ce4fdf2a1228318a6625.jpg" 
-                alt="Waleed Khan Portfolio" 
+              <i className="fa-brands fa-fiverr text-lg"></i>
+            </a>
+            <a 
+              href="https://wa.me/923141137917" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-zinc-650 hover:text-green-500 transition-colors duration-200"
+              title="Message on WhatsApp"
+            >
+              <i className="fa-brands fa-whatsapp text-lg"></i>
+            </a>
+            <a 
+              href="https://www.instagram.com/malikdeenkhail/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-zinc-650 hover:text-rose-500 transition-colors duration-200"
+              title="Instagram"
+            >
+              <i className="fa-brands fa-instagram text-lg"></i>
+            </a>
+          </div>
+
+          {/* LEFT SIDE BLOCK: DESIGNER COLUMN */}
+          <div className="w-full md:w-[42%] flex flex-col items-center justify-center text-center px-4 lg:px-8 z-10 select-none pt-4 md:pt-0">
+            <div className="relative w-full">
+              {/* Artistic glowing blend blob on hover-left */}
+              <div 
+                className="absolute -inset-10 bg-orange-100/25 rounded-full blur-[45px] pointer-events-none transition-all duration-300"
+                style={{ opacity: dWeight }}
+              />
+              
+              <h1 
+                style={{
+                  color: mousePos.x < 0.45 ? '#ea580c' : '#18181b',
+                  transform: mousePos.x < 0.45 ? 'scale(1.03)' : 'none'
+                }}
+                className="font-poppins text-6xl sm:text-7xl lg:text-[6.2rem] font-bold leading-none tracking-tighter text-zinc-950 lowercase mb-4 transition-all duration-300 select-none"
+              >
+                designer
+              </h1>
+              
+              <p className="font-sans text-[15px] sm:text-[16px] text-zinc-500 max-w-[320px] leading-relaxed font-light mx-auto select-none">
+                “WordPress & WooCommerce designer specializing in custom templates & mobile-perfect layouts.”
+              </p>
+            </div>
+          </div>
+
+          {/* CENTRAL AB-POSITIONED PORTRAIT BLOCK (WITHOUT FRAME/BORDER BARS FOR THE AUTHENTIC FLOATING SPLIT ETHEREAL ILLUSION) */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[52%] z-20 pointer-events-none hidden md:block select-none">
+            <div 
+              className="w-[330px] h-[330px] lg:w-[430px] lg:h-[430px] relative transition-transform duration-150 ease-out"
+              style={{
+                transform: isMobile ? 'none' : `rotateY(${portraitRotateY}deg) rotateX(${portraitRotateX}deg) translate3d(${portraitTranslateX}px, ${portraitTranslateY}px, 20px)`
+              }}
+            >
+              <video 
+                src="https://v1.pinimg.com/videos/iht/expMp4/c7/26/5a/c7265ae30899ed25703ee737bc80dd45_720w.mp4" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
                 referrerPolicy="no-referrer"
-                className="w-full h-full object-cover rounded-full select-none"
-                style={{ objectPosition: '50% 28%' }}
+                className="w-full h-full object-contain pointer-events-auto select-none transition-all rounded-full"
+                style={{
+                  objectPosition: 'center center',
+                }}
               />
             </div>
-
-            {/* Social icons nested positioned absolutely above/right of visual portrait */}
-            <div className="absolute top-[-40px] right-[-25px] flex flex-col gap-3 pointer-events-auto">
-              {[
-                { breed: 'fa-brands', icon: 'fa-fiverr', url: 'https://www.fiverr.com/sellers/aleekhan77', title: 'Fiverr Profile' },
-                { breed: 'fa-brands', icon: 'fa-whatsapp', url: 'https://wa.me/923141137917', title: 'Message on WhatsApp' },
-                { breed: 'fa-brands', icon: 'fa-instagram', url: 'https://www.instagram.com/malikdeenkhail/', title: 'Instagram' }
-              ].map((item, idx) => (
-                <a 
-                  key={idx}
-                  href={item.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  title={item.title}
-                  className="w-[44px] h-[44px] rounded-full bg-white border border-zinc-100 text-zinc-900 hover:text-white hover:bg-zinc-900 flex items-center justify-center shadow-md text-sm hover:scale-115 hover:-translate-y-1 transition-all"
-                >
-                  <i className={`${item.breed} ${item.icon}`} />
-                </a>
-              ))}
-            </div>
           </div>
-        </div>
 
-        {/* RIGHT SIDE: CODER */}
-        <div 
-          className={`w-full lg:w-1/2 min-h-[40vh] lg:min-h-0 flex flex-col justify-center items-center lg:items-end text-center lg:text-right px-8 lg:px-[10%] py-12 relative z-10 transition-colors duration-500 ${
-            mousePos.x > 0.55 ? 'bg-sky-50/15' : 'bg-white'
-          }`}
-        >
-          {/* Faded Code background overlay */}
-          <div 
-            className="absolute inset-0 pointer-events-none overflow-hidden font-mono text-[11px] leading-relaxed text-zinc-400/5 p-12 transition-all duration-300"
-            style={{
-              opacity: cWeight,
-              transform: `translate(${rightCodeX}px, ${rightCodeY}px)`
-            }}
-          >
-            <div className="text-left w-full h-full max-w-sm ml-auto select-none space-y-1">
-              <p className="text-teal-500/20">{`import { initializeApp } from "firebase/app";`}</p>
-              <p className="text-zinc-500/10">{`const config = { apiKey: process.env.KEY };`}</p>
-              <p className="text-zinc-500/10">{`export class PortfolioEngine extends Component {`}</p>
-              <p className="text-zinc-500/10">{`  constructor(props) { super(props); }`}</p>
-              <p className="text-orange-500/10">{`  renderCodeSnippet() {`}</p>
-              <p className="text-sky-500/20">{`    return <CodeBlock language="typescript" />;`}</p>
-              <p className="text-zinc-500/10">{`  }`}</p>
-              <p className="text-zinc-500/10">{`}`}</p>
+          {/* FALLBACK PORTRAIT LAYOUT FOR SMALL SCREEN REALESTATES */}
+          <div className="w-[240px] h-[240px] md:hidden z-20 my-2 rounded-full overflow-hidden border-4 border-zinc-100 bg-zinc-50 shadow-lg select-none">
+            <video 
+              src="https://v1.pinimg.com/videos/iht/expMp4/c7/26/5a/c7265ae30899ed25703ee737bc80dd45_720w.mp4" 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              className="w-full h-full object-cover rounded-full"
+              style={{ objectPosition: 'center center' }}
+            />
+          </div>
+
+          {/* RIGHT SIDE BLOCK: CODER COLUMN */}
+          <div className="w-full md:w-[42%] flex flex-col items-center justify-center text-center px-4 lg:px-8 z-10 select-none pt-4 md:pt-0">
+            <div className="relative w-full">
+              {/* Dynamic coding grid light overlay on hover-right */}
+              <div 
+                className="absolute -inset-10 bg-sky-100/15 rounded-full blur-[45px] pointer-events-none transition-all duration-300"
+                style={{ opacity: cWeight }}
+              />
+
+              <h1 
+                style={{
+                  color: mousePos.x > 0.55 ? '#0284c7' : '#18181b',
+                  transform: mousePos.x > 0.55 ? 'scale(1.03)' : 'none'
+                }}
+                className="font-mono text-6xl sm:text-7xl lg:text-[6.2rem] font-bold leading-none tracking-tighter text-zinc-950 lowercase mb-4 transition-all duration-300 select-none"
+              >
+                &lt;coder&gt;
+              </h1>
+              
+              <p className="font-mono text-xs sm:text-[13.5px] text-zinc-500 max-w-[320px] leading-relaxed font-light mx-auto select-none">
+                “WordPress expert building speed-optimized online stores & custom plugin solutions.”
+              </p>
             </div>
           </div>
 
-          {/* Symmetrical brackets */}
-          <div className="absolute right-12 bottom-12 font-mono text-zinc-950/2 font-bold text-[14rem] pointer-events-none select-none">
-            {`</>`}
-          </div>
-
-          <div className="relative z-10 space-y-4 animate-fade-in-delayed">
-            <h1 
-              style={{
-                color: mousePos.x > 0.55 ? '#0284c7' : '#18181b',
-                transform: mousePos.x > 0.55 ? 'translateX(-10px) scale(1.01)' : 'none'
-              }}
-              className="font-poppins text-7xl sm:text-8xl lg:text-[7.5rem] font-extrabold leading-[0.9] tracking-tighter select-none transition-all duration-300"
-            >
-              &lt;coder&gt;
-            </h1>
-            <p className="font-mono text-base sm:text-lg font-light text-zinc-500 max-w-[440px] leading-relaxed select-none">
-              “WordPress expert building speed-optimized online stores & custom plugin solutions.”
-            </p>
-          </div>
         </div>
       </section>
 
