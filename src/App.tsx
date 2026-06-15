@@ -14,6 +14,7 @@ import {
   Layout, 
   ExternalLink 
 } from 'lucide-react';
+import ShopSection from './components/ShopSection';
 
 export default function App() {
   const [currentTime, setCurrentTime] = useState<string>('');
@@ -1486,7 +1487,7 @@ export default function App() {
         </div>
 
         <div className="hidden lg:flex items-center gap-8">
-          {['Home', 'About', 'Featured', 'Portfolio', 'Blog', 'Contact'].map((item) => (
+          {['Home', 'About', 'Featured', 'Portfolio', 'Shop', 'Blog', 'Contact'].map((item) => (
             <a 
               key={item} 
               href={`#${item.toLowerCase()}`} 
@@ -1805,7 +1806,10 @@ export default function App() {
         </div>
       </section>
 
-      {/* 6. TYPOGRAPHIC BLOG COLUMN */}
+      {/* 6. STUDIO PRINT LAB / ECOMMERCE SHOP */}
+      <ShopSection />
+
+      {/* 7. TYPOGRAPHIC BLOG COLUMN */}
       <section id="blog" className="py-24 px-6 lg:px-12 bg-white">
         <div className="max-w-4xl mx-auto space-y-12">
           <div className="text-center space-y-2">
